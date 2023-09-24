@@ -1,8 +1,14 @@
 import { View, Text, StyleSheet } from 'react-native'
+import ImageDetail from '../components/ImageDetail'
 
 const ImagesScreen = () => {
   return (
-    <Text>ImagesScreen</Text>
+    <View>
+      <ImageDetail />      
+      <ImageDetail />      
+      <ImageDetail />      
+      <ImageDetail />      
+    </View>
   )
 }
 
