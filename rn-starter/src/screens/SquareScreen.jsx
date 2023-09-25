@@ -3,6 +3,8 @@ import { useState } from 'react'
 
 import ColorCounter from '../components/ColorCounter'
 
+const COLOR_STEP = 15
+
 const SquareScreen = () => {
   const [red, setRed] = useState(0)
   const [green, setGreen] = useState(0)
@@ -12,17 +14,18 @@ const SquareScreen = () => {
     <View>
       <ColorCounter
         color='Red'
-        onIncrease={() => setRed(red + 1)}
-        onDecrease={() => setRed(red - 1)}
+        onIncrease={() => setRed(red + COLOR_STEP)}
+        onDecrease={() => setRed(red - COLOR_STEP)}
       />
-      <ColorCounter color='Blue' 
-        onIncrease={() => setBlue(blue + 1)}
-        onDecrease={() => setBlue(blue - 1)}
+      <ColorCounter color='Blue'
+        onIncrease={() => setBlue(blue + COLOR_STEP)}
+        onDecrease={() => setBlue(blue - COLOR_STEP)}
       />
-      <ColorCounter color='Green' 
-        onIncrease={() => setGreen(green + 1)}
-        onDecrease={() => setGreen(green - 1)}
+      <ColorCounter color='Green'
+        onIncrease={() => setGreen(green + COLOR_STEP)}
+        onDecrease={() => setGreen(green - COLOR_STEP)}
       />
+      <View style={{ height: 15 - Button, height: 150, backgroundColor: `rgb(${red}, ${green}, ${blue})` }}></View>
     </View>
   )
 }
