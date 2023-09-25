@@ -20,9 +20,8 @@ const styles = StyleSheet.create({
   viewStyle: {
     borderWidth: 3,
     borderColor: 'black',
-    flexDirection: 'row',
     height: 200,
-    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   textStyle: {
     borderWidth: 3,
