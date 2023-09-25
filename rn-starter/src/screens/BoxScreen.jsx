@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: 'black',
     height: 200,
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
   textStyle1: {
     borderWidth: 3,
@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
   textStyle2: {
     borderWidth: 3,
     borderColor: 'red',
-    alignSelf: 'center',
+    position: 'absolute',
+    fontSize: 28,
   },
   textStyle3: {
     borderWidth: 3,
