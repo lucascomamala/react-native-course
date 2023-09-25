@@ -10,20 +10,17 @@ const reducer = (state, action) => {
   // * action === { colorToChange: 'red' || 'green' || 'blue', amount: 15 || -15 }
   switch (action.colorToChange) {
     case 'red':
-      return {
-        ...state,
-        red: state.red + action.amount
-      }
+      return state.red + action.amount > 255 || state.red + action.amount < 0
+        ? state
+        : { ...state, red: state.red + action.amount }
     case 'green':
-      return {
-        ...state,
-        green: state.green + action.amount
-      }
+      return state.green + action.amount > 255 || state.green + action.amount < 0
+        ? state
+        : { ...state, green: state.green + action.amount }
     case 'blue':
-      return {
-        ...state,
-        blue: state.blue + action.amount
-      }
+      return state.blue + action.amount > 255 || state.blue + action.amount < 0
+        ? state
+        : { ...state, blue: state.blue + action.amount }
     default:
       return state
   }
@@ -31,23 +28,6 @@ const reducer = (state, action) => {
 
 const SquareScreen = () => {
   const [{ red, blue, green }, dispatch] = useReducer(reducer, { red: 0, green: 0, blue: 0 })
-
-  const setColor = (color, change) => {
-    // * Accepted colors: red, green, blue
-    switch (color) {
-      case 'red':
-        red + change > 255 || red + change < 0 ? null : setRed(red + change)
-        return
-      case 'green':
-        green + change > 255 || green + change < 0 ? null : setGreen(green + change)
-        return
-      case 'blue':
-        blue + change > 255 || blue + change < 0 ? null : setBlue(blue + change)
-        return
-      default:
-        return
-    }
-  }
 
   return (
     <View>
