@@ -36,11 +36,13 @@ const SquareScreen = () => {
         onIncrease={() => dispatch({ type: 'change_red', payload: COLOR_STEP })}
         onDecrease={() => dispatch({ type: 'change_red', payload: -1 * COLOR_STEP })}
       />
-      <ColorCounter color='Blue'
+      <ColorCounter
+        color='Blue'
         onIncrease={() => dispatch({ type: 'change_blue', payload: COLOR_STEP })}
         onDecrease={() => dispatch({ type: 'change_blue', payload: -1 * COLOR_STEP })}
       />
-      <ColorCounter color='Green'
+      <ColorCounter
+        color='Green'
         onIncrease={() => dispatch({ type: 'change_green', payload: COLOR_STEP })}
         onDecrease={() => dispatch({ type: 'change_green', payload: -1 * COLOR_STEP })}
       />
