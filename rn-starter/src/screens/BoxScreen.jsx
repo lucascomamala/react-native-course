@@ -21,21 +21,21 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: 'black',
     height: 200,
+    alignItems: 'flex-start',
   },
   textStyle1: {
     borderWidth: 3,
     borderColor: 'red',
-    flex: 4,
   },
   textStyle2: {
     borderWidth: 3,
     borderColor: 'red',
-    flex: 2,
+    alignSelf: 'center',
   },
   textStyle3: {
     borderWidth: 3,
     borderColor: 'red',
-    flex: 4,
+    alignSelf: 'flex-end',
   },
 })
 
