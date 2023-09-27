@@ -13,10 +13,4 @@ const navigator = createStackNavigator({
   },
 })
 
-
 export default createAppContainer(navigator)
-
-const styles = StyleSheet.create({
-  container: {
-  },
-})
