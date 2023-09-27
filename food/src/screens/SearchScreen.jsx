@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import { useState } from 'react'
 
 import SearchBar from '../components/SearchBar'
@@ -25,22 +25,24 @@ const SearchScreen = () => {
       <Text>
         We have found {results.length} results
       </Text>
-      <ResultsList
-        title="On a budget"
-        results={filterResultsByPrice('$')}
-      />
-      <ResultsList
-        title="Cost Effective"
-        results={filterResultsByPrice('$$')}
-      />
-      <ResultsList
-        title="Bit Pricier"
-        results={filterResultsByPrice('$$$')}
-      />
-      <ResultsList
-        title="Big Spender"
-        results={filterResultsByPrice('$$$$')}
-      />
+      <ScrollView>
+        <ResultsList
+          title="On a budget"
+          results={filterResultsByPrice('$')}
+        />
+        <ResultsList
+          title="Cost Effective"
+          results={filterResultsByPrice('$$')}
+        />
+        <ResultsList
+          title="Bit Pricier"
+          results={filterResultsByPrice('$$$')}
+        />
+        <ResultsList
+          title="Big Spender"
+          results={filterResultsByPrice('$$$$')}
+        />
+      </ScrollView>
     </View>
   )
 }
