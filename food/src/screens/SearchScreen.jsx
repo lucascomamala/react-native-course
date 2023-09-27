@@ -22,9 +22,6 @@ const SearchScreen = () => {
         onTermSubmit={() => searchApi(term)}
       />
       {errorMessage && <Text>{errorMessage}</Text>}
-      <Text>
-        We have found {results.length} results
-      </Text>
       <ScrollView>
         <ResultsList
           title="Cost Effective"
