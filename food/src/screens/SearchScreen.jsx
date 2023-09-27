@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import yelp from '../api/yelp'
 
@@ -24,6 +24,10 @@ const SearchScreen = () => {
       setErrorMessage('Something went wrong')
     }
   }
+
+  useEffect(() => {
+    searchApi('pasta')
+  }, [])
 
   return (
     <View>
