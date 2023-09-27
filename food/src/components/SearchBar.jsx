@@ -1,8 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
+import { Feather } from '@expo/vector-icons'
 
 const SearchBar = () => {
   return (
     <View style={styles.background}>
+      <Feather name="search" size={30} color="black" /> 
       <Text>
         SearchBar
       </Text>
@@ -16,7 +18,6 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 5,
     marginHorizontal: 15,
-    marginTop: 15,
   },
 })
 
