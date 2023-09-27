@@ -4,7 +4,7 @@ import ResultsCard from './ResultsCard'
 
 const ResultsList = ({ title, results }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.title}>
         {title}
       </Text>
@@ -12,7 +12,7 @@ const ResultsList = ({ title, results }) => {
         horizontal
         data={results}
         keyExtractor={result => result.id}
-        renderItem={({ item }) => 
+        renderItem={({ item }) =>
           <ResultsCard
             result={item}
           />
@@ -26,7 +26,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: 'bold',
-  }
+    marginLeft: 15,
+    marginBottom: 5,
+  },
+  container: {
+    marginBottom: 10,
+  },
 })
 
 export default ResultsList
