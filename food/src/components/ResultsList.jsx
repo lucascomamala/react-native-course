@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native'
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
 
 import ResultsCard from './ResultsCard'
 
-const ResultsList = ({ title, results }) => {
+const ResultsList = ({ title, results, navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
@@ -12,11 +12,15 @@ const ResultsList = ({ title, results }) => {
         horizontal
         data={results}
         keyExtractor={result => result.id}
-        renderItem={({ item }) =>
-          <ResultsCard
-            result={item}
-          />
-        }
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate('RestaurantShow')}
+          >
+            <ResultsCard
+              result={item}
+            />
+          </TouchableOpacity>
+        )}
         showsHorizontalScrollIndicator={false}
       />
     </View>
