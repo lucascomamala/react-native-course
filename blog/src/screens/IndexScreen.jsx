@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList, Button } from 'react-native'
+import { View, Text, StyleSheet, FlatList, Button, TouchableOpacity } from 'react-native'
 import { useContext } from 'react'
 import { FontAwesome } from '@expo/vector-icons'
 
@@ -18,8 +18,10 @@ const IndexScreen = () => {
         keyExtractor={blogPost => blogPost.title}
         renderItem={({ item }) => {
           return <View style={styles.row}>
-            <Text style={styles.title}>{item.title}</Text>
-            <FontAwesome style={styles.icon} name="trash-o" />
+            <Text style={styles.title}>{item.title} - {item.id}</Text>
+            <TouchableOpacity onPress={() => console.log(item.id)}>
+              <FontAwesome style={styles.icon} name="trash-o" />
+            </TouchableOpacity>
           </View>
         }}
       />
@@ -34,7 +36,6 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 10,
     borderTopWidth: 1,
-    borderBottomWidth: 1,
   },
   title: {
     fontSize: 18,
