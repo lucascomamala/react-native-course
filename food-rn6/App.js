@@ -11,7 +11,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerTitle: "Business Search" }}>
         <Stack.Screen name="Search" component={SearchScreen} />
-        <Stack.Screen name="ResultsShow" component={RestaurantDetailScreen} />
+        <Stack.Screen name="RestaurantShow" component={RestaurantDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
