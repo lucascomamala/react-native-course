@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { useContext } from 'react'
+import { FontAwesome } from '@expo/vector-icons'
 
 import { Context as BlogContext } from '../context/BlogContext'
 
@@ -14,6 +15,16 @@ const ShowScreen = ({navigation}) => {
       <Text>{blogPost.title}</Text>
     </View>
   )
+}
+
+ShowScreen.navigationOptions = ({ navigation }) => {
+  return {
+    headerRight: () => (
+      <TouchableOpacity onPress={() => navigation.navigate('Edit')}>
+        <FontAwesome name="edit" size={30} color="black" />
+      </TouchableOpacity>
+    ),
+  }
 }
 
 const styles = StyleSheet.create({})
