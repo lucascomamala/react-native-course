@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, FlatList, Button, TouchableOpacity } from 'react-native'
 import { useContext } from 'react'
 import { FontAwesome } from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons'
 
 import { Context as BlogContext } from '../context/BlogContext'
 
@@ -31,6 +32,16 @@ const IndexScreen = ({ navigation }) => {
       />
     </View>
   )
+}
+
+IndexScreen.navigationOptions = ({ navigation }) => {
+  return {
+    headerRight: () => (
+      <TouchableOpacity onPress={() => navigation.navigate('Create')}>
+        <Feather name="plus" size={30} />
+      </TouchableOpacity>
+    ),
+  }
 }
 
 const styles = StyleSheet.create({
