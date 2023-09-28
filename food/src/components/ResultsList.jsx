@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
+import { withNavigation } from 'react-navigation'
 
 import ResultsCard from './ResultsCard'
 
@@ -39,4 +40,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default ResultsList
+export default withNavigation(ResultsList)
