@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react'
 
 import yelp from '../api/yelp'
 
-const RestaurantDetailScreen = ({ navigation }) => {
+const RestaurantDetailScreen = ({ route }) => {
   const [result, setResult] = useState(null)
-  const id = navigation.getParam('id')
+  const id = route.params.id;
 
   const getResult = async (id) => {
     const response = await yelp.get(`/${id}`)
