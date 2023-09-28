@@ -4,7 +4,7 @@ import { FontAwesome } from '@expo/vector-icons'
 
 import { Context as BlogContext } from '../context/BlogContext'
 
-const IndexScreen = () => {
+const IndexScreen = ({ navigation }) => {
   const { state, addBlogPost, deleteBlogPost } = useContext(BlogContext)
 
   return (
@@ -17,12 +17,16 @@ const IndexScreen = () => {
         data={state}
         keyExtractor={blogPost => blogPost.title}
         renderItem={({ item }) => {
-          return <View style={styles.row}>
-            <Text style={styles.title}>{item.title} - {item.id}</Text>
-            <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
-              <FontAwesome style={styles.icon} name="trash-o" />
+          return (
+            <TouchableOpacity onPress={() => navigation.navigate('Show', { id: item.id })}>
+              <View style={styles.row}>
+                <Text style={styles.title}>{item.title} - {item.id}</Text>
+                <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
+                  <FontAwesome style={styles.icon} name="trash-o" />
+                </TouchableOpacity>
+              </View>
             </TouchableOpacity>
-          </View>
+          )
         }}
       />
     </View>
