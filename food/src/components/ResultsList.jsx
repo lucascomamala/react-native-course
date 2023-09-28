@@ -4,6 +4,11 @@ import { withNavigation } from 'react-navigation'
 import ResultsCard from './ResultsCard'
 
 const ResultsList = ({ title, results, navigation }) => {
+  
+  if (!results.length) {
+    return null
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
