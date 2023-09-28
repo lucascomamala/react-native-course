@@ -17,7 +17,9 @@ const CreateScreen = ({ navigation }) => {
       <Button
         title="Publish"
         onPress={() => {
-          addBlogPost(title, content)
+          addBlogPost(title, content, () => {
+            navigation.navigate('Index')
+          })
         }}
       />
     </View>
