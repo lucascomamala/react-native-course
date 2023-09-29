@@ -4,6 +4,16 @@
       "id": 1,
       "title": "Blog post title",
       "content": "Blog post body"
+    },
+    {
+      "title": "New",
+      "content": "New",
+      "id": 2
+    },
+    {
+      "title": "Jjnn",
+      "content": "Uuuuuhh jjj",
+      "id": 3
     }
   ]
 }
