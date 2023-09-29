@@ -4,7 +4,7 @@ import { FontAwesome } from '@expo/vector-icons'
 
 import { Context as BlogContext } from '../context/BlogContext'
 
-const ShowScreen = ({navigation}) => {
+const ShowScreen = ({ navigation }) => {
   const id = navigation.getParam('id')
   const { state } = useContext(BlogContext)
 
@@ -20,7 +20,7 @@ const ShowScreen = ({navigation}) => {
 ShowScreen.navigationOptions = ({ navigation }) => {
   return {
     headerRight: () => (
-      <TouchableOpacity onPress={() => navigation.navigate('Edit')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Edit', { id: navigation.getParam('id') })}>
         <FontAwesome name="edit" size={30} color="black" />
       </TouchableOpacity>
     ),
