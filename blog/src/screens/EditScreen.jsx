@@ -14,6 +14,7 @@ const EditScreen = ({ navigation }) => {
       onSubmit={(title, content) => {
         console.log(title, content)
       }}
+      saveBtnTitle="Save"
     />
   )
 }

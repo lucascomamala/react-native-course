@@ -12,6 +12,7 @@ const CreateScreen = ({ navigation }) => {
       onSubmit={(title, content) => {
         addBlogPost(title, content, () => navigation.navigate('Index'))
       }}
+      saveBtnTitle="Publish"
     />
   )
 }

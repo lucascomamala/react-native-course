@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet, Button, TextInput } from 'react-native'
 import { useState } from 'react'
 
-const BlogPostForm = ({ onSubmit }) => {
-  const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
+const BlogPostForm = ({ onSubmit, initialValues, saveBtnTitle }) => {
+  const [title, setTitle] = useState(initialValues.title)
+  const [content, setContent] = useState(initialValues.content)
 
   return (
     <View>
@@ -12,7 +12,7 @@ const BlogPostForm = ({ onSubmit }) => {
       <Text style={styles.label}>Enter Content:</Text>
       <TextInput style={styles.input} value={content} onChangeText={(text) => setContent(text)} />
       <Button
-        title="Publish"
+        title={saveBtnTitle}
         onPress={() => onSubmit(title, content)}
       />
     </View>
