@@ -2,7 +2,6 @@ import { useContext } from 'react'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Text } from 'react-native-elements'
 
-import Spacer from '../components/Spacer'
 import AuthForm from '../components/AuthForm'
 import NavLink from '../components/NavLink'
 import { Context as AuthContext } from '../context/authContext'
@@ -36,7 +35,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    marginBottom: 200
+    marginBottom: 100
   }
 })
 
