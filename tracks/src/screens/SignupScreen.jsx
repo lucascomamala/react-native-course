@@ -1,6 +1,6 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
-import { Text, Input, Button } from 'react-native-elements'
+import { Text } from 'react-native-elements'
 
 import Spacer from '../components/Spacer'
 import AuthForm from '../components/AuthForm'
@@ -17,7 +17,7 @@ const SignupScreen = ({ navigation }) => {
         buttonText='Sign Up'
         onSubmit={signup}
       />
-      
+
       <TouchableOpacity onPress={() => navigation.navigate('Signin')}>
         <Spacer>
           <Text style={styles.link}>
